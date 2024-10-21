@@ -30,7 +30,36 @@
 
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Basic styling for the custom alert */
+        #customAlert {
+            width: 50%;
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #000;
+            z-index: 1000;
+        }
 
+        #customAlert button {
+            margin-top: 10px;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
     
 </head>
 
@@ -110,11 +139,22 @@
             </div>
             <div class="container text-center">
                 <div class="row align-items-center">
+                    <div class="row align-items-center">
+                        <!-- enter -->
+                        <div id="overlay"></div>
+                        <div id="customAlert">
+                            <p><strong>Get notified as soon as this becomes available</strong></p>
+                            <input placeholder="Your Email" /><br><br>
+                            <input placeholder="Name of the product"  /><br><br>
+                            <button onclick="closeCustomAlert()">Notify me</button>
+                        </div>
+                        <!-- end enter -->
+
                   <div class="col">
                     <div class="card" style="width:300px">
                         <img class="card-img-top" src="img/pettreatment/dogs.jpg" alt="Card image">
                         <div class="card-body">
-                          <h4 class="card-title">Advantage Multi for Dogs</h4>
+                          <a  href="/drug_details/Advantage.html" class="card-title">Advantage Multi for Dogs</a>
                           <p class="card-text">
                             <img style="width: 8%; height: 8%; " src="img/star.png" />
                             <img style="width: 8%; height: 8%; " src="img/star.png" />
@@ -130,7 +170,7 @@
                     <div class="card" style="width:300px">
                         <img class="card-img-top" src="img/pettreatment/carprofen.jpg" alt="Card image">
                         <div class="card-body">
-                          <h4 class="card-title">Carprofen (generic)</h4>
+                          <a  href="/drug_details/Carprofen.html" class="card-title">Carprofen (generic)</a>
                           <p class="card-text">
                             <img style="width: 8%; height: 8%; " src="img/star.png" />
                             <img style="width: 8%; height: 8%; " src="img/star.png" />
@@ -146,7 +186,7 @@
                     <div class="card" style="width:300px">
                         <img class="card-img-top" src="img/pettreatment/clemastine.jpg" alt="Card image">
                         <div class="card-body">
-                          <h4 class="card-title">Clemastine 2.68mg</h4>
+                          <a  href="/drug_details/Clemastine.html" class="card-title">Clemastine 2.68mg</a>
                           <p class="card-text">
                             <img style="width: 8%; height: 8%; " src="img/star.png" />
                             <img style="width: 8%; height: 8%; " src="img/star.png" />
@@ -166,7 +206,7 @@
                     <div class="card" style="width:300px">
                         <img class="card-img-top" src="img/pettreatment/enalapril.jpg" alt="Card image">
                         <div class="card-body">
-                          <h4 class="card-title">Enalapril</h4>
+                          <a href="/drug_details/Enalapril.html" class="card-title">Enalapril</a>
                           <p class="card-text">
                             <img style="width: 8%; height: 8%; " src="img/star.png" />
                             <img style="width: 8%; height: 8%; " src="img/star.png" />
@@ -182,7 +222,7 @@
                     <div class="card" style="width:300px">
                         <img class="card-img-top" src="img/pettreatment/metoclopramide.jpg" alt="Card image">
                         <div class="card-body">
-                          <h4 class="card-title">Metoclopramide</h4>
+                          <a href="/drug_details/Metoclopramide.html" class="card-title">Metoclopramide</h4>
                           <p class="card-text">
                             <img style="width: 8%; height: 8%; " src="img/star.png" />
                             <img style="width: 8%; height: 8%; " src="img/star.png" />
@@ -198,7 +238,7 @@
                     <div class="card" style="width:300px">
                         <img class="card-img-top" src="img/pettreatment/ursodiol.jpg" alt="Card image">
                         <div class="card-body">
-                          <h4 class="card-title">Ursodiol</h4>
+                          <a href="/drug_details/Ursodiol.html" class="card-title">Ursodiol</h4>
                           <p class="card-text">
                             <img style="width: 8%; height: 8%; " src="img/star.png" />
                             <img style="width: 8%; height: 8%; " src="img/star.png" />
@@ -302,6 +342,19 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
+    <!-- pop notifer -->
+    <script>
+        function showCustomAlert() {
+            document.getElementById('customAlert').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+  
+        function closeCustomAlert() {
+            document.getElementById('customAlert').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+  
   
 
 
